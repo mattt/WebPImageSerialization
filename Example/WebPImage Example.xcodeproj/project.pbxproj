@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F82E75AF18ABDC4E002D596E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75AE18ABDC4E002D596E /* Foundation.framework */; };
+		F82E75B118ABDC4E002D596E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75B018ABDC4E002D596E /* CoreGraphics.framework */; };
+		F82E75B318ABDC4E002D596E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75B218ABDC4E002D596E /* UIKit.framework */; };
+		F82E75B918ABDC4E002D596E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F82E75B718ABDC4E002D596E /* InfoPlist.strings */; };
+		F82E75BB18ABDC4E002D596E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E75BA18ABDC4E002D596E /* main.m */; };
+		F82E75BF18ABDC4E002D596E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E75BE18ABDC4E002D596E /* AppDelegate.m */; };
+		F82E75C118ABDC4E002D596E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82E75C018ABDC4E002D596E /* Images.xcassets */; };
+		F82E75DF18ABDC7B002D596E /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75DE18ABDC7B002D596E /* WebP.framework */; };
+		F8B725EB18BE915200C12AFC /* image.webp in Resources */ = {isa = PBXBuildFile; fileRef = F8B725EA18BE915200C12AFC /* image.webp */; };
+		F8B7264718BEAB1000C12AFC /* WebPImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B7264618BEAB1000C12AFC /* WebPImageSerialization.m */; };
+		F8B7264B18BEC00A00C12AFC /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B7264A18BEC00A00C12AFC /* image.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F82E75AB18ABDC4E002D596E /* WebPImage Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebPImage Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F82E75AE18ABDC4E002D596E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F82E75B018ABDC4E002D596E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F82E75B218ABDC4E002D596E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F82E75B618ABDC4E002D596E /* WebPImage Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WebPImage Example-Info.plist"; sourceTree = "<group>"; };
+		F82E75B818ABDC4E002D596E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F82E75BA18ABDC4E002D596E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F82E75BC18ABDC4E002D596E /* WebPImage Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebPImage Example-Prefix.pch"; sourceTree = "<group>"; };
+		F82E75BD18ABDC4E002D596E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F82E75BE18ABDC4E002D596E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F82E75C018ABDC4E002D596E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F82E75C718ABDC4E002D596E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F82E75CF18ABDC4E002D596E /* WebPImage ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WebPImage ExampleTests-Info.plist"; sourceTree = "<group>"; };
+		F82E75D118ABDC4E002D596E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F82E75D318ABDC4E002D596E /* WebPImage_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPImage_ExampleTests.m; sourceTree = "<group>"; };
+		F82E75DE18ABDC7B002D596E /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = ../WebP.framework; sourceTree = "<group>"; };
+		F8B725EA18BE915200C12AFC /* image.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = image.webp; sourceTree = "<group>"; };
+		F8B7264518BEAB1000C12AFC /* WebPImageSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPImageSerialization.h; sourceTree = "<group>"; };
+		F8B7264618BEAB1000C12AFC /* WebPImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPImageSerialization.m; sourceTree = "<group>"; };
+		F8B7264A18BEC00A00C12AFC /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F82E75A818ABDC4E002D596E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F82E75DF18ABDC7B002D596E /* WebP.framework in Frameworks */,
+				F82E75B118ABDC4E002D596E /* CoreGraphics.framework in Frameworks */,
+				F82E75B318ABDC4E002D596E /* UIKit.framework in Frameworks */,
+				F82E75AF18ABDC4E002D596E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F82E75A218ABDC4E002D596E = {
+			isa = PBXGroup;
+			children = (
+				F82E75B418ABDC4E002D596E /* WebPImage Example */,
+				F82E75CD18ABDC4E002D596E /* WebPImage ExampleTests */,
+				F82E75AD18ABDC4E002D596E /* Frameworks */,
+				F82E75AC18ABDC4E002D596E /* Products */,
+				F82E75DD18ABDC57002D596E /* Vendor */,
+			);
+			sourceTree = "<group>";
+		};
+		F82E75AC18ABDC4E002D596E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F82E75AB18ABDC4E002D596E /* WebPImage Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F82E75AD18ABDC4E002D596E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F82E75DE18ABDC7B002D596E /* WebP.framework */,
+				F82E75AE18ABDC4E002D596E /* Foundation.framework */,
+				F82E75B018ABDC4E002D596E /* CoreGraphics.framework */,
+				F82E75B218ABDC4E002D596E /* UIKit.framework */,
+				F82E75C718ABDC4E002D596E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F82E75B418ABDC4E002D596E /* WebPImage Example */ = {
+			isa = PBXGroup;
+			children = (
+				F82E75BD18ABDC4E002D596E /* AppDelegate.h */,
+				F82E75BE18ABDC4E002D596E /* AppDelegate.m */,
+				F82E75C018ABDC4E002D596E /* Images.xcassets */,
+				F82E75B518ABDC4E002D596E /* Supporting Files */,
+			);
+			path = "WebPImage Example";
+			sourceTree = "<group>";
+		};
+		F82E75B518ABDC4E002D596E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8B7264A18BEC00A00C12AFC /* image.png */,
+				F8B725EA18BE915200C12AFC /* image.webp */,
+				F82E75B618ABDC4E002D596E /* WebPImage Example-Info.plist */,
+				F82E75B718ABDC4E002D596E /* InfoPlist.strings */,
+				F82E75BA18ABDC4E002D596E /* main.m */,
+				F82E75BC18ABDC4E002D596E /* WebPImage Example-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F82E75CD18ABDC4E002D596E /* WebPImage ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				F82E75D318ABDC4E002D596E /* WebPImage_ExampleTests.m */,
+				F82E75CE18ABDC4E002D596E /* Supporting Files */,
+			);
+			path = "WebPImage ExampleTests";
+			sourceTree = "<group>";
+		};
+		F82E75CE18ABDC4E002D596E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F82E75CF18ABDC4E002D596E /* WebPImage ExampleTests-Info.plist */,
+				F82E75D018ABDC4E002D596E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F82E75DD18ABDC57002D596E /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				F8B7261A18BEAB1000C12AFC /* WebPImageSerialization */,
+			);
+			name = Vendor;
+			path = ../WebPImageSerialization;
+			sourceTree = "<group>";
+		};
+		F8B7261A18BEAB1000C12AFC /* WebPImageSerialization */ = {
+			isa = PBXGroup;
+			children = (
+				F8B7264518BEAB1000C12AFC /* WebPImageSerialization.h */,
+				F8B7264618BEAB1000C12AFC /* WebPImageSerialization.m */,
+			);
+			name = WebPImageSerialization;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F82E75AA18ABDC4E002D596E /* WebPImage Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F82E75D718ABDC4E002D596E /* Build configuration list for PBXNativeTarget "WebPImage Example" */;
+			buildPhases = (
+				F82E75A718ABDC4E002D596E /* Sources */,
+				F82E75A818ABDC4E002D596E /* Frameworks */,
+				F82E75A918ABDC4E002D596E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WebPImage Example";
+			productName = "WebPImage Example";
+			productReference = F82E75AB18ABDC4E002D596E /* WebPImage Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F82E75A318ABDC4E002D596E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Mattt Thompson";
+			};
+			buildConfigurationList = F82E75A618ABDC4E002D596E /* Build configuration list for PBXProject "WebPImage Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F82E75A218ABDC4E002D596E;
+			productRefGroup = F82E75AC18ABDC4E002D596E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F82E75AA18ABDC4E002D596E /* WebPImage Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F82E75A918ABDC4E002D596E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B725EB18BE915200C12AFC /* image.webp in Resources */,
+				F82E75B918ABDC4E002D596E /* InfoPlist.strings in Resources */,
+				F82E75C118ABDC4E002D596E /* Images.xcassets in Resources */,
+				F8B7264B18BEC00A00C12AFC /* image.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F82E75A718ABDC4E002D596E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B7264718BEAB1000C12AFC /* WebPImageSerialization.m in Sources */,
+				F82E75BF18ABDC4E002D596E /* AppDelegate.m in Sources */,
+				F82E75BB18ABDC4E002D596E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F82E75B718ABDC4E002D596E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F82E75B818ABDC4E002D596E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F82E75D018ABDC4E002D596E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F82E75D118ABDC4E002D596E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F82E75D518ABDC4E002D596E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F82E75D618ABDC4E002D596E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F82E75D818ABDC4E002D596E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mattt/Code/Objective-C/WebPImageSerialization",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WebPImage Example/WebPImage Example-Prefix.pch";
+				INFOPLIST_FILE = "WebPImage Example/WebPImage Example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F82E75D918ABDC4E002D596E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mattt/Code/Objective-C/WebPImageSerialization",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WebPImage Example/WebPImage Example-Prefix.pch";
+				INFOPLIST_FILE = "WebPImage Example/WebPImage Example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F82E75A618ABDC4E002D596E /* Build configuration list for PBXProject "WebPImage Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F82E75D518ABDC4E002D596E /* Debug */,
+				F82E75D618ABDC4E002D596E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F82E75D718ABDC4E002D596E /* Build configuration list for PBXNativeTarget "WebPImage Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F82E75D818ABDC4E002D596E /* Debug */,
+				F82E75D918ABDC4E002D596E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F82E75A318ABDC4E002D596E /* Project object */;
+}
