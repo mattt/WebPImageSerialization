@@ -22,8 +22,6 @@ imageView.image = [UIImage imageNamed:@"image.webp"];
 NSData *data = UIImageWebPRepresentation(imageView.image);
 ```
 
-![WebP Image](https://github.com/mattt/WebPImageSerialization/blob/master/Example/WebPImage%20Example/image.png)
-
 ---
 
 ## Contact
