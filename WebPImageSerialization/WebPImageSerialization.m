@@ -130,11 +130,11 @@ __attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data, CGFloa
 }
 
 extern __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image) {
-    return UIImageWebPRepresentation(image, 1.0f, (WebPImagePreset)WebPImageDefaultPreset, nil);
+    return UIImageWebPRepresentation(image, 75.0f, (WebPImagePreset)WebPImageDefaultPreset, nil);
 }
 
 __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image, WebPImagePreset preset, CGFloat quality, NSError * __autoreleasing *error) {
-    NSCParameterAssert(quality >= 0.0f && quality <= 1.0);
+    NSCParameterAssert(quality >= 0.0f && quality <= 100.0f);
 
     CGImageRef imageRef = image.CGImage;
     NSDictionary *userInfo = nil;
