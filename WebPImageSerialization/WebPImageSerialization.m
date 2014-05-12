@@ -116,8 +116,7 @@ __attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data, CGFloa
         CGImageRelease(imageRef);
         CGColorSpaceRelease(colorSpace);
         CGDataProviderRelease(provider);
-        WebPFreeDecBuffer(&config.output);
-        
+
         return image;
     }
     _error: {
