@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/mattt/WebPImageSerialization'
   s.social_media_url = 'https://twitter.com/mattt'
   s.authors  = { 'Mattt Thompson' => 'm@mattt.me' }
-  s.source   = { :git => 'https://github.com/mattt/WebPImageSerialization.git', :head }
+  s.source   = { :git => 'https://github.com/mattt/WebPImageSerialization.git'}
   s.source_files = 'WebPImageSerialization', 'WebP.framework'
   s.preserve_paths = 'WebPImageSerialization', 'WebP.framework'
   s.vendored_frameworks = 'WebP.framework'
