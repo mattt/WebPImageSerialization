@@ -103,7 +103,7 @@ __attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data, CGFloa
         size_t bitsPerComponent = 8;
         size_t bitsPerPixel = 32;
         size_t bytesPerRow = 4;
-        CGDataProviderRef provider = CGDataProviderCreateWithData(&config, config.output.u.RGBA.rgba, config.options.scaled_width * config.options.scaled_height * bytesPerRow, WebPFreeImageData);
+        CGDataProviderRef provider = CGDataProviderCreateWithData(&config, config.output.u.RGBA.rgba, config.output.width * config.output.height * bytesPerRow, WebPFreeImageData);
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
         CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault | kCGImageAlphaLast;
         CGColorRenderingIntent renderingIntent = kCGRenderingIntentDefault;
