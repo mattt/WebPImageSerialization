@@ -26,17 +26,19 @@
 
 @import UIKit;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// Decoding WebP Image Data
 
 /**
  
  */
-extern __attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data);
+extern __attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *data);
 
 /**
  
  */
-extern __attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data, CGFloat scale, NSError * __autoreleasing *error);
+extern __attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *data, CGFloat scale, NSError * __autoreleasing *error);
 
 /// Encoding WebP Image Data
 
@@ -55,12 +57,12 @@ typedef NS_ENUM(NSUInteger, WebPImagePreset) {
 /**
  
  */
-extern __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image);
+extern __attribute__((overloadable)) NSData * _Nullable UIImageWebPRepresentation(UIImage *image);
 
 /**
  
  */
-extern __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image, WebPImagePreset preset, CGFloat quality, NSError * __autoreleasing *error);
+extern __attribute__((overloadable)) NSData * _Nullable UIImageWebPRepresentation(UIImage *image, WebPImagePreset preset, CGFloat quality, NSError * __autoreleasing *error);
 
 #pragma mark -
 
@@ -74,31 +76,31 @@ extern __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage 
 /**
 
  */
-+ (UIImage *)imageWithData:(NSData *)data
-                     error:(NSError * __autoreleasing *)error;
++ (UIImage * _Nullable)imageWithData:(NSData *)data
+                               error:(NSError * __autoreleasing *)error;
 
 /**
 
  */
-+ (UIImage *)imageWithData:(NSData *)data
-                     scale:(CGFloat)scale
-                     error:(NSError * __autoreleasing *)error;
++ (UIImage * _Nullable)imageWithData:(NSData *)data
+                               scale:(CGFloat)scale
+                               error:(NSError * __autoreleasing *)error;
 
 /// Creating WebPImage Data
 
 /**
 
  */
-+ (NSData *)dataWithImage:(UIImage *)image
-                    error:(NSError * __autoreleasing *)error;
++ (NSData * _Nullable)dataWithImage:(UIImage *)image
+                              error:(NSError * __autoreleasing *)error;
 
 /**
  
  */
-+ (NSData *)dataWithImage:(UIImage *)image
-                   preset:(WebPImagePreset)preset
-                  quality:(CGFloat)quality
-                    error:(NSError * __autoreleasing *)error;
++ (NSData * _Nullable)dataWithImage:(UIImage *)image
+                             preset:(WebPImagePreset)preset
+                            quality:(CGFloat)quality
+                              error:(NSError * __autoreleasing *)error;
 
 @end
 
@@ -106,4 +108,7 @@ extern __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage 
  
  */
 extern NSString * const WebPImageErrorDomain;
+
+NS_ASSUME_NONNULL_END
+
 #endif

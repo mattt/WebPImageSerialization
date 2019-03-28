@@ -28,6 +28,8 @@
 #import <WebP/decode.h>
 #pragma clang diagnostic pop
 
+NS_ASSUME_NONNULL_BEGIN
+
 NSString * const WebPImageErrorDomain = @"com.webp.image.error";
 
 #pragma clang diagnostic push
@@ -77,24 +79,27 @@ static void WebPFreeImageData(void *info, const void *data, size_t size) {
 #pragma clang diagnostic pop
 }
 
-__attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data) {
+__attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *data) {
     return UIImageWithWebPData(data, 1.0, nil);
 }
 
-__attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data, CGFloat scale, NSError * __autoreleasing *error) {
+__attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *data, CGFloat scale, NSError * __autoreleasing *error) {
     NSDictionary *userInfo = nil;
-
     {
         WebPDecoderConfig config;
         int width = 0, height = 0;
 
         if(!WebPGetInfo([data bytes], [data length], &width, &height)) {
-            userInfo = @{NSLocalizedDescriptionKey: NSLocalizedStringFromTable(@"WebP header formatting error", @"WebPImageSerialization", nil)};
+            userInfo = @{
+                         NSLocalizedDescriptionKey: NSLocalizedStringFromTable(@"WebP header formatting error", @"WebPImageSerialization", nil)
+                        };
             goto _error;
         }
 
         if(!WebPInitDecoderConfig(&config)) {
-            userInfo = @{NSLocalizedDescriptionKey: NSLocalizedStringFromTable(@"WebP image failed to initialize structure", @"WebPImageSerialization", nil)};
+            userInfo = @{
+                         NSLocalizedDescriptionKey: NSLocalizedStringFromTable(@"WebP image failed to initialize structure", @"WebPImageSerialization", nil)
+                        };
             goto _error;
         }
 
@@ -105,7 +110,9 @@ __attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data, CGFloa
 
         VP8StatusCode status = WebPDecode([data bytes], [data length], &config);
         if (status != VP8_STATUS_OK) {
-            userInfo = @{NSLocalizedDescriptionKey: WebPLocalizedDescriptionForVP8StatusCode(status)};
+            userInfo = @{
+                         NSLocalizedDescriptionKey: WebPLocalizedDescriptionForVP8StatusCode(status)
+                        };
             goto _error;
         }
 
@@ -137,16 +144,15 @@ __attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data, CGFloa
     }
 }
 
-extern __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image) {
+extern __attribute__((overloadable)) NSData * _Nullable UIImageWebPRepresentation(UIImage *image) {
     return UIImageWebPRepresentation(image, 75.0f, (WebPImagePreset)WebPImageDefaultPreset, nil);
 }
 
-__attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image, WebPImagePreset preset, CGFloat quality, NSError * __autoreleasing *error) {
+__attribute__((overloadable)) NSData * _Nullable UIImageWebPRepresentation(UIImage *image, WebPImagePreset preset, CGFloat quality, NSError * __autoreleasing *error) {
     NSCParameterAssert(quality >= 0.0 && quality <= 100.0);
 
     CGImageRef imageRef = image.CGImage;
     NSDictionary *userInfo = nil;
-
     {
         CGDataProviderRef dataProvider = CGImageGetDataProvider(imageRef);
         CFDataRef dataRef = CGDataProviderCopyData(dataProvider);
@@ -208,36 +214,38 @@ __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image,
 
 @implementation WebPImageSerialization
 
-+ (UIImage *)imageWithData:(NSData *)data
-                     error:(NSError * __autoreleasing *)error
++ (UIImage * _Nullable)imageWithData:(NSData *)data
+                               error:(NSError * __autoreleasing *)error
 {
     return [self imageWithData:data scale:1.0 error:error];
 }
 
-+ (UIImage *)imageWithData:(NSData *)data
-                     scale:(CGFloat)scale
-                     error:(NSError * __autoreleasing *)error
++ (UIImage * _Nullable)imageWithData:(NSData *)data
+                               scale:(CGFloat)scale
+                               error:(NSError * __autoreleasing *)error
 {
     return UIImageWithWebPData(data, scale, error);
 }
 
 #pragma mark -
 
-+ (NSData *)dataWithImage:(UIImage *)image
-                    error:(NSError * __autoreleasing *)error
++ (NSData * _Nullable)dataWithImage:(UIImage *)image
+                              error:(NSError * __autoreleasing *)error
 {
     return [self dataWithImage:image preset:(WebPImagePreset)WebPImageDefaultPreset quality:1.0 error:error];
 }
 
-+ (NSData *)dataWithImage:(UIImage *)image
-                   preset:(WebPImagePreset)preset
-                  quality:(CGFloat)quality
-                    error:(NSError * __autoreleasing *)error
++ (NSData * _Nullable )dataWithImage:(UIImage *)image
+                              preset:(WebPImagePreset)preset
+                             quality:(CGFloat)quality
+                               error:(NSError * __autoreleasing *)error
 {
     return UIImageWebPRepresentation(image, preset, quality, error);
 }
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #pragma mark -
 
@@ -270,6 +278,8 @@ static inline void webp_swizzleSelector(Class class, SEL originalSelector, SEL s
         }
     });
 }
+
+NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage *)webp_imageNamed:(NSString *)name __attribute__((objc_method_family(new))){
     CGFloat scale = [[UIScreen mainScreen] scale];
@@ -332,4 +342,7 @@ static inline void webp_swizzleSelector(Class class, SEL originalSelector, SEL s
 }
 
 @end
+
+NS_ASSUME_NONNULL_END
+
 #endif
