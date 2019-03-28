@@ -356,6 +356,7 @@
 				INFOPLIST_FILE = "WebPImage Example/WebPImage Example-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattt.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Weverything";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -374,6 +375,7 @@
 				INFOPLIST_FILE = "WebPImage Example/WebPImage Example-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattt.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Weverything";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

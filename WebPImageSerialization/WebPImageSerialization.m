@@ -22,17 +22,23 @@
 
 #import "WebPImageSerialization.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
 #import <WebP/encode.h>
 #import <WebP/decode.h>
+#pragma clang diagnostic pop
 
 NSString * const WebPImageErrorDomain = @"com.webp.image.error";
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-macros"
 #define WebPImageDefaultPreset WEBP_PRESET_DEFAULT
 #define WebPImagePicturePreset WEBP_PRESET_PICTURE
 #define WebPImagePhotoPreset WEBP_PRESET_PHOTO
 #define WebPImageDrawingPreset WEBP_PRESET_DRAWING
 #define WebPImageIconPreset WEBP_PRESET_ICON
 #define WebPImageTextPreset WEBP_PRESET_TEXT
+#pragma clang diagnostic pop
 
 static inline BOOL WebPDataIsValid(NSData *data) {
     if (data && data.length > 0) {
@@ -59,17 +65,20 @@ static NSString * WebPLocalizedDescriptionForVP8StatusCode(VP8StatusCode status)
             return NSLocalizedStringFromTable(@"VP8 user Abort", @"WebPImageSerialization", nil);
         case VP8_STATUS_NOT_ENOUGH_DATA:
             return NSLocalizedStringFromTable(@"VP8 not enough data", @"WebPImageSerialization", nil);
-        default:
+        case VP8_STATUS_OK:
             return NSLocalizedStringFromTable(@"VP8 unknown error", @"WebPImageSerialization", nil);
     }
 }
 
 static void WebPFreeImageData(void *info, const void *data, size_t size) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wcast-qual"
     free((void *)data);
+#pragma clang diagnostic pop
 }
 
 __attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data) {
-    return UIImageWithWebPData(data, 1.0f, nil);
+    return UIImageWithWebPData(data, 1.0, nil);
 }
 
 __attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data, CGFloat scale, NSError * __autoreleasing *error) {
@@ -133,7 +142,7 @@ extern __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage 
 }
 
 __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image, WebPImagePreset preset, CGFloat quality, NSError * __autoreleasing *error) {
-    NSCParameterAssert(quality >= 0.0f && quality <= 100.0f);
+    NSCParameterAssert(quality >= 0.0 && quality <= 100.0);
 
     CGImageRef imageRef = image.CGImage;
     NSDictionary *userInfo = nil;
@@ -168,7 +177,7 @@ __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image,
         picture.width = (int)width;
         picture.height = (int)height;
 
-        WebPPictureImportRGBA(&picture, (uint8_t *)CFDataGetBytePtr(dataRef), (int)bytesPerRow);
+        WebPPictureImportRGBA(&picture, (const uint8_t *)CFDataGetBytePtr(dataRef), (int)bytesPerRow);
         WebPPictureARGBToYUVA(&picture, picture.colorspace);
         WebPCleanupTransparentArea(&picture);
 
@@ -202,7 +211,7 @@ __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image,
 + (UIImage *)imageWithData:(NSData *)data
                      error:(NSError * __autoreleasing *)error
 {
-    return [self imageWithData:data scale:1.0f error:error];
+    return [self imageWithData:data scale:1.0 error:error];
 }
 
 + (UIImage *)imageWithData:(NSData *)data
@@ -217,7 +226,7 @@ __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image,
 + (NSData *)dataWithImage:(UIImage *)image
                     error:(NSError * __autoreleasing *)error
 {
-    return [self dataWithImage:image preset:(WebPImagePreset)WebPImageDefaultPreset quality:1.0f error:error];
+    return [self dataWithImage:image preset:(WebPImagePreset)WebPImageDefaultPreset quality:1.0 error:error];
 }
 
 + (NSData *)dataWithImage:(UIImage *)image
@@ -233,7 +242,7 @@ __attribute__((overloadable)) NSData * UIImageWebPRepresentation(UIImage *image,
 #pragma mark -
 
 #ifndef WEBP_NO_UIIMAGE_INITIALIZER_SWIZZLING
-#import <objc/runtime.h>
+@import ObjectiveC.runtime;
 
 static inline void webp_swizzleSelector(Class class, SEL originalSelector, SEL swizzledSelector) {
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
@@ -276,7 +285,7 @@ static inline void webp_swizzleSelector(Class class, SEL originalSelector, SEL s
 
 - (id)webp_initWithData:(NSData *)data  __attribute__((objc_method_family(init))) {
     if (WebPDataIsValid(data)) {
-        return UIImageWithWebPData(data, 1.0f, nil);
+        return UIImageWithWebPData(data, 1.0, nil);
     }
 
     return [self webp_initWithData:data];

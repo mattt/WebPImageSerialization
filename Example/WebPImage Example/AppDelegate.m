@@ -25,6 +25,7 @@
 #import "WebPImageSerialization.h"
 
 @implementation AppDelegate
+@synthesize window;
 
 - (BOOL)application:(__unused UIApplication *)application
 didFinishLaunchingWithOptions:(__unused NSDictionary *)launchOptions
@@ -34,7 +35,7 @@ didFinishLaunchingWithOptions:(__unused NSDictionary *)launchOptions
     UIViewController *viewController = [[UIViewController alloc] init];
     self.window.rootViewController = viewController;
 
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectInset(viewController.view.bounds, 20.0f, 20.0f)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectInset(viewController.view.bounds, 20.0, 20.0)];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.image = [UIImage imageNamed:@"image.webp"];
     [viewController.view addSubview:imageView];
