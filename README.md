@@ -1,11 +1,28 @@
-WebPImageSerialization
-======================
+# WebPImageSerialization
 
-`WebPImageSerialization` encodes and decodes between `UIImage` and [WebP](https://developers.google.com/speed/webp/) image data, following the API conventions of Foundation's `NSJSONSerialization` class.
+`WebPImageSerialization` encodes and decodes between `UIImage`
+and [WebP](https://developers.google.com/speed/webp/) images,
+following the API conventions of Foundation's `NSJSONSerialization` class.
 
-Keen on C functions, are you? Well, `WebPImageSerialization` provides functions as well, for creating a `UIImage` from data, and generating a WebP representation of an existing `UIImage`.
+By default, `UIImage` initializers can't decode animated images from GIF files.
+This library uses swizzling to provide this functionality for you.
+To opt out of this behavior,
+set `WEBP_NO_UIIMAGE_INITIALIZER_SWIZZLING` in your build environment.
+If you're using CocoaPods,
+you can add this build setting to your `Podfile`:
 
-What's that? You'd prefer _not to write any additional code_? You're in luck! **So long as you don't `#define WEBP_NO_UIIMAGE_INITIALIZER_SWIZZLING`, `UIImage` will natively support WebP image data**, allowing you to treat it no differently than `JPEG`, `GIF`, `PNG`, or `TIFF`.
+```ruby
+post_install do |r|
+  r.pods_project.targets.each do |target|
+    if target.name == 'WebPImageSerialization' then
+      target.build_configurations.each do |config|
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||=
+          ['$(inherited)', 'WEBP_NO_UIIMAGE_INITIALIZER_SWIZZLING=1']
+      end
+    end
+  end
+end
+```
 
 ## Usage
 
@@ -26,11 +43,7 @@ NSData *data = UIImageWebPRepresentation(imageView.image);
 
 ## Contact
 
-Mattt Thompson
-
-- http://github.com/mattt
-- http://twitter.com/mattt
-- m@mattt.me
+Mattt ([@mattt](https://twitter.com/mattt))
 
 ## License
 
