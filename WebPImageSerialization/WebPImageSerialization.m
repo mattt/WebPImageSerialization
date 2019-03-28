@@ -272,18 +272,39 @@ static inline void webp_swizzleSelector(Class class, SEL originalSelector, SEL s
 }
 
 + (UIImage *)webp_imageNamed:(NSString *)name __attribute__((objc_method_family(new))){
-    NSString *path = [[NSBundle mainBundle] pathForResource:[name stringByDeletingPathExtension] ofType:[name pathExtension]];
+    CGFloat scale = [[UIScreen mainScreen] scale];
+    
+    NSString *scaleSuffix = @"";
+    if (scale >= 3) {
+        scaleSuffix = @"@3x";
+    } else if (scale >= 2) {
+        scaleSuffix = @"@2x";
+    }
+    
+    NSString * _Nullable path = nil;
+   
+    if (!path) {
+        // e.g. image@2x.webp
+        NSString *nameWithRatio = [[[name stringByDeletingPathExtension] stringByAppendingString:scaleSuffix] stringByAppendingPathExtension:[name pathExtension]];
+        path = [[NSBundle mainBundle] pathForResource:nameWithRatio ofType:[name pathExtension]];
+    }
+    
+    if (!path) {
+        // e.g. image.webp
+        path = [[NSBundle mainBundle] pathForResource:[name stringByDeletingPathExtension] ofType:[name pathExtension]];
+    }
+    
     if (path) {
-        NSData *data = [NSData dataWithContentsOfFile:path];
+        NSData *data = [NSData dataWithContentsOfFile:(NSString * _Nonnull)path];
         if (WebPDataIsValid(data)) {
             return [WebPImageSerialization imageWithData:data error:nil];
         }
     }
-
+    
     return [self webp_imageNamed:name];
 }
 
-- (id)webp_initWithData:(NSData *)data  __attribute__((objc_method_family(init))) {
+- (id)webp_initWithData:(NSData *)data __attribute__((objc_method_family(init))) {
     if (WebPDataIsValid(data)) {
         return UIImageWithWebPData(data, 1.0, nil);
     }
