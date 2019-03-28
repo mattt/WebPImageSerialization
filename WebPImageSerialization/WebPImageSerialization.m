@@ -120,7 +120,7 @@ __attribute__((overloadable)) UIImage * UIImageWithWebPData(NSData *data, CGFloa
 
         CGImageRef imageRef = CGImageCreate((size_t)width, (size_t)height, bitsPerComponent, bitsPerPixel, bytesPerRow * width, colorSpace, bitmapInfo, provider, NULL, shouldInterpolate, renderingIntent);
 
-        UIImage *image = [UIImage imageWithCGImage:imageRef];
+        UIImage *image = [UIImage imageWithCGImage:imageRef scale:scale orientation:UIImageOrientationUp];
 
         CGImageRelease(imageRef);
         CGColorSpaceRelease(colorSpace);
