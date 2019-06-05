@@ -12,6 +12,9 @@
       </FileRef>
    </Group>
    <FileRef
+      location = "group:WebPImageSerialization/WebPImageSerialization.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Example/WebPImage Example.xcodeproj">
    </FileRef>
 </Workspace>
