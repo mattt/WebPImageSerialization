@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "group:WebPImageSerialization"
-      name = "WebPImageSerialization">
-      <FileRef
-         location = "group:WebPImageSerialization.h">
-      </FileRef>
-      <FileRef
-         location = "group:WebPImageSerialization.m">
-      </FileRef>
-   </Group>
    <FileRef
       location = "group:WebPImageSerialization.xcodeproj">
    </FileRef>
