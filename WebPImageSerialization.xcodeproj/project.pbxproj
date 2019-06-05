@@ -16,8 +16,8 @@
 		2F4E9C5F22A75DDE002B3C90 /* WebPImageSerialization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebPImageSerialization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4E9C6322A75DDE002B3C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F4E9C7022A75E84002B3C90 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = ../WebP.framework; sourceTree = "<group>"; };
-		2F4E9C7222A75EE0002B3C90 /* WebPImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPImageSerialization.m; sourceTree = SOURCE_ROOT; };
-		2F4E9C7322A75EE1002B3C90 /* WebPImageSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPImageSerialization.h; sourceTree = SOURCE_ROOT; };
+		2F4E9C7222A75EE0002B3C90 /* WebPImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebPImageSerialization.m; path = WebPImageSerialization/WebPImageSerialization.m; sourceTree = SOURCE_ROOT; };
+		2F4E9C7322A75EE1002B3C90 /* WebPImageSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebPImageSerialization.h; path = WebPImageSerialization/WebPImageSerialization.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,7 +287,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/..";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/";
 				INFOPLIST_FILE = WebPImageSerialization/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -312,7 +312,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/..";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/";
 				INFOPLIST_FILE = WebPImageSerialization/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
