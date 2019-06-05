@@ -24,6 +24,16 @@ post_install do |r|
 end
 ```
 
+## Installation
+
+### Carthage
+
+To integrate WebPImageSerialization into your Xcode project using Carthage, specify it in your Cartfile:
+
+```
+github "OnlyMyRailgun/WebPImageSerialization" ~> 0.4.0
+```
+
 ## Usage
 
 ### Decoding
