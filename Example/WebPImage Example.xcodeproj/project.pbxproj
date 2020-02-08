@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22E7604E23EE9C8B00051B96 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E7604D23EE9C8B00051B96 /* WebP.framework */; };
+		22E7605023EE9D5000051B96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E7604F23EE9D5000051B96 /* LaunchScreen.storyboard */; };
 		F82E75AF18ABDC4E002D596E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75AE18ABDC4E002D596E /* Foundation.framework */; };
 		F82E75B118ABDC4E002D596E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75B018ABDC4E002D596E /* CoreGraphics.framework */; };
 		F82E75B318ABDC4E002D596E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75B218ABDC4E002D596E /* UIKit.framework */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		22E7604D23EE9C8B00051B96 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = ../WebP.framework; sourceTree = "<group>"; };
+		22E7604F23EE9D5000051B96 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F82E75AB18ABDC4E002D596E /* WebPImage Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebPImage Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82E75AE18ABDC4E002D596E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F82E75B018ABDC4E002D596E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,6 +107,7 @@
 				F82E75B718ABDC4E002D596E /* InfoPlist.strings */,
 				F82E75BA18ABDC4E002D596E /* main.m */,
 				F82E75BC18ABDC4E002D596E /* WebPImage Example-Prefix.pch */,
+				22E7604F23EE9D5000051B96 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				F8B725EB18BE915200C12AFC /* image.webp in Resources */,
 				F82E75B918ABDC4E002D596E /* InfoPlist.strings in Resources */,
 				F82E75C118ABDC4E002D596E /* Images.xcassets in Resources */,
+				22E7605023EE9D5000051B96 /* LaunchScreen.storyboard in Resources */,
 				F8B7264B18BEC00A00C12AFC /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,8 +330,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WebPImage Example/WebPImage Example-Prefix.pch";
 				INFOPLIST_FILE = "WebPImage Example/WebPImage Example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattt.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Weverything";
 				WRAPPER_EXTENSION = app;
 			};
@@ -347,8 +353,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WebPImage Example/WebPImage Example-Prefix.pch";
 				INFOPLIST_FILE = "WebPImage Example/WebPImage Example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattt.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Weverything";
 				WRAPPER_EXTENSION = app;
 			};
