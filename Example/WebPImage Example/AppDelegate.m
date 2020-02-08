@@ -35,9 +35,22 @@ didFinishLaunchingWithOptions:(__unused NSDictionary *)launchOptions
     UIViewController *viewController = [[UIViewController alloc] init];
     self.window.rootViewController = viewController;
 
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectInset(viewController.view.bounds, 20.0, 20.0)];
+    UIImage *image = [UIImage imageNamed:@"image.webp"];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |
+                                    UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-    imageView.image = [UIImage imageNamed:@"image.webp"];
+    
+    CGSize viewSize = viewController.view.frame.size;
+    CGSize imageSize = imageView.frame.size;
+    if (imageSize.width > viewSize.width || imageSize.height > viewSize.height) {
+        CGFloat minimumSize = viewSize.width < viewSize.height ? viewSize.width : viewSize.height;
+        imageView.frame = (CGRect){CGPointZero, (CGSize){minimumSize, minimumSize}};
+        imageView.frame = CGRectInset(imageView.frame, 20.0, 20.0);
+    }
+    
+    imageView.center = viewController.view.center;
     [viewController.view addSubview:imageView];
 
     self.window.backgroundColor = [UIColor whiteColor];
