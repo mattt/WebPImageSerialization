@@ -33,9 +33,6 @@
 		F82E75BE18ABDC4E002D596E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F82E75C018ABDC4E002D596E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F82E75C718ABDC4E002D596E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		F82E75CF18ABDC4E002D596E /* WebPImage ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WebPImage ExampleTests-Info.plist"; sourceTree = "<group>"; };
-		F82E75D118ABDC4E002D596E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F82E75D318ABDC4E002D596E /* WebPImage_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebPImage_ExampleTests.m; sourceTree = "<group>"; };
 		F82E75DE18ABDC7B002D596E /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = ../WebP.framework; sourceTree = "<group>"; };
 		F8B725EA18BE915200C12AFC /* image.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = image.webp; sourceTree = "<group>"; };
 		F8B7264518BEAB1000C12AFC /* WebPImageSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPImageSerialization.h; sourceTree = "<group>"; };
@@ -62,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				F82E75B418ABDC4E002D596E /* WebPImage Example */,
-				F82E75CD18ABDC4E002D596E /* WebPImage ExampleTests */,
 				F82E75AD18ABDC4E002D596E /* Frameworks */,
 				F82E75AC18ABDC4E002D596E /* Products */,
 				F82E75DD18ABDC57002D596E /* Vendor */,
@@ -109,24 +105,6 @@
 				F82E75B718ABDC4E002D596E /* InfoPlist.strings */,
 				F82E75BA18ABDC4E002D596E /* main.m */,
 				F82E75BC18ABDC4E002D596E /* WebPImage Example-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F82E75CD18ABDC4E002D596E /* WebPImage ExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				F82E75D318ABDC4E002D596E /* WebPImage_ExampleTests.m */,
-				F82E75CE18ABDC4E002D596E /* Supporting Files */,
-			);
-			path = "WebPImage ExampleTests";
-			sourceTree = "<group>";
-		};
-		F82E75CE18ABDC4E002D596E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F82E75CF18ABDC4E002D596E /* WebPImage ExampleTests-Info.plist */,
-				F82E75D018ABDC4E002D596E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -228,14 +206,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				F82E75B818ABDC4E002D596E /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		F82E75D018ABDC4E002D596E /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F82E75D118ABDC4E002D596E /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
