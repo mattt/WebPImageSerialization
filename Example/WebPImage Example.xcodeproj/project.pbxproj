@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22E7604E23EE9C8B00051B96 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E7604D23EE9C8B00051B96 /* WebP.framework */; };
 		F82E75AF18ABDC4E002D596E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75AE18ABDC4E002D596E /* Foundation.framework */; };
 		F82E75B118ABDC4E002D596E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75B018ABDC4E002D596E /* CoreGraphics.framework */; };
 		F82E75B318ABDC4E002D596E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75B218ABDC4E002D596E /* UIKit.framework */; };
@@ -14,13 +15,13 @@
 		F82E75BB18ABDC4E002D596E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E75BA18ABDC4E002D596E /* main.m */; };
 		F82E75BF18ABDC4E002D596E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E75BE18ABDC4E002D596E /* AppDelegate.m */; };
 		F82E75C118ABDC4E002D596E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82E75C018ABDC4E002D596E /* Images.xcassets */; };
-		F82E75DF18ABDC7B002D596E /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E75DE18ABDC7B002D596E /* WebP.framework */; };
 		F8B725EB18BE915200C12AFC /* image.webp in Resources */ = {isa = PBXBuildFile; fileRef = F8B725EA18BE915200C12AFC /* image.webp */; };
 		F8B7264718BEAB1000C12AFC /* WebPImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B7264618BEAB1000C12AFC /* WebPImageSerialization.m */; };
 		F8B7264B18BEC00A00C12AFC /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B7264A18BEC00A00C12AFC /* image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22E7604D23EE9C8B00051B96 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = ../WebP.framework; sourceTree = "<group>"; };
 		F82E75AB18ABDC4E002D596E /* WebPImage Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebPImage Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82E75AE18ABDC4E002D596E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F82E75B018ABDC4E002D596E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -33,7 +34,6 @@
 		F82E75BE18ABDC4E002D596E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F82E75C018ABDC4E002D596E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F82E75C718ABDC4E002D596E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		F82E75DE18ABDC7B002D596E /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = ../WebP.framework; sourceTree = "<group>"; };
 		F8B725EA18BE915200C12AFC /* image.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = image.webp; sourceTree = "<group>"; };
 		F8B7264518BEAB1000C12AFC /* WebPImageSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPImageSerialization.h; sourceTree = "<group>"; };
 		F8B7264618BEAB1000C12AFC /* WebPImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPImageSerialization.m; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F82E75DF18ABDC7B002D596E /* WebP.framework in Frameworks */,
+				22E7604E23EE9C8B00051B96 /* WebP.framework in Frameworks */,
 				F82E75B118ABDC4E002D596E /* CoreGraphics.framework in Frameworks */,
 				F82E75B318ABDC4E002D596E /* UIKit.framework in Frameworks */,
 				F82E75AF18ABDC4E002D596E /* Foundation.framework in Frameworks */,
@@ -76,7 +76,7 @@
 		F82E75AD18ABDC4E002D596E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F82E75DE18ABDC7B002D596E /* WebP.framework */,
+				22E7604D23EE9C8B00051B96 /* WebP.framework */,
 				F82E75AE18ABDC4E002D596E /* Foundation.framework */,
 				F82E75B018ABDC4E002D596E /* CoreGraphics.framework */,
 				F82E75B218ABDC4E002D596E /* UIKit.framework */,
@@ -317,8 +317,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../**",
 					"$(SRCROOT)/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -336,8 +338,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../**",
 					"$(SRCROOT)/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
