@@ -18,10 +18,11 @@
 
 #ifndef _MSC_VER
 #include <inttypes.h>
-#ifdef __STRICT_ANSI__
-#define WEBP_INLINE
-#else  /* __STRICT_ANSI__ */
+#if defined(__cplusplus) || !defined(__STRICT_ANSI__) || \
+    (defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L)
 #define WEBP_INLINE inline
+#else
+#define WEBP_INLINE
 #endif
 #else
 typedef signed   char int8_t;
@@ -38,10 +39,14 @@ typedef long long int int64_t;
 #ifndef WEBP_EXTERN
 // This explicitly marks library functions and allows for changing the
 // signature for e.g., Windows DLL builds.
-#define WEBP_EXTERN(type) extern type
+# if defined(__GNUC__) && __GNUC__ >= 4
+#  define WEBP_EXTERN extern __attribute__ ((visibility ("default")))
+# else
+#  define WEBP_EXTERN extern
+# endif  /* __GNUC__ >= 4 */
 #endif  /* WEBP_EXTERN */
 
 // Macro to check ABI compatibility (same major revision number)
 #define WEBP_ABI_IS_INCOMPATIBLE(a, b) (((a) >> 8) != ((b) >> 8))
 
-#endif  /* WEBP_WEBP_TYPES_H_ */
+#endif  // WEBP_WEBP_TYPES_H_
