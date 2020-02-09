@@ -40,6 +40,11 @@ extern __attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSD
  */
 extern __attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *data, CGFloat scale, NSError * __autoreleasing *error);
 
+/**
+ 
+ */
+extern __attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *data, CGFloat scale, CGSize fittingSize, NSError * __autoreleasing *error);
+
 /// Encoding WebP Image Data
 
 /**
@@ -84,6 +89,14 @@ extern __attribute__((overloadable)) NSData * _Nullable UIImageWebPRepresentatio
  */
 + (UIImage * _Nullable)imageWithData:(NSData *)data
                                scale:(CGFloat)scale
+                               error:(NSError * __autoreleasing *)error;
+
+/**
+
+ */
++ (UIImage * _Nullable)imageWithData:(NSData *)data
+                               scale:(CGFloat)scale
+                         fittingSize:(CGSize)fittingSize
                                error:(NSError * __autoreleasing *)error;
 
 /// Creating WebPImage Data

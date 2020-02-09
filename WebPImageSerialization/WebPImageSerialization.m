@@ -84,6 +84,10 @@ __attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *da
 }
 
 __attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *data, CGFloat scale, NSError * __autoreleasing *error) {
+    return UIImageWithWebPData(data, scale, CGSizeZero, error);
+}
+    
+__attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *data, CGFloat scale, CGSize fittingSize, NSError * __autoreleasing *error) {
     NSDictionary *userInfo = nil;
     {
         WebPDecoderConfig config;
@@ -108,6 +112,17 @@ __attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *da
         config.options.no_fancy_upsampling = true;
         config.options.use_threads = true;
 
+        if (fittingSize.width > 0.0 && fittingSize.height > 0.0) {
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Wgnu"
+            CGFloat sizeScale = MIN(fittingSize.width / (CGFloat)width, fittingSize.height / (CGFloat)height);
+            #pragma clang diagnostic pop
+            
+            config.options.use_scaling = true;
+            config.options.scaled_width = (int)(width * sizeScale);
+            config.options.scaled_height = (int)(height * sizeScale);
+        }
+        
         VP8StatusCode status = WebPDecode([data bytes], [data length], &config);
         if (status != VP8_STATUS_OK) {
             userInfo = @{
@@ -125,7 +140,7 @@ __attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *da
         CGColorRenderingIntent renderingIntent = kCGRenderingIntentDefault;
         BOOL shouldInterpolate = YES;
 
-        CGImageRef imageRef = CGImageCreate((size_t)width, (size_t)height, bitsPerComponent, bitsPerPixel, bytesPerRow * width, colorSpace, bitmapInfo, provider, NULL, shouldInterpolate, renderingIntent);
+        CGImageRef imageRef = CGImageCreate((size_t)config.output.width, (size_t)config.output.height, bitsPerComponent, bitsPerPixel, bytesPerRow * config.output.width, colorSpace, bitmapInfo, provider, NULL, shouldInterpolate, renderingIntent);
 
         UIImage *image = [UIImage imageWithCGImage:imageRef scale:scale orientation:UIImageOrientationUp];
 
@@ -225,6 +240,14 @@ __attribute__((overloadable)) NSData * _Nullable UIImageWebPRepresentation(UIIma
                                error:(NSError * __autoreleasing *)error
 {
     return UIImageWithWebPData(data, scale, error);
+}
+
++ (UIImage * _Nullable)imageWithData:(NSData *)data
+                               scale:(CGFloat)scale
+                         fittingSize:(CGSize)fittingSize
+                               error:(NSError * __autoreleasing *)error
+{
+    return UIImageWithWebPData(data, scale, fittingSize, error);
 }
 
 #pragma mark -
