@@ -160,7 +160,7 @@ __attribute__((overloadable)) UIImage * _Nullable UIImageWithWebPData(NSData *da
 }
 
 extern __attribute__((overloadable)) NSData * _Nullable UIImageWebPRepresentation(UIImage *image) {
-    return UIImageWebPRepresentation(image, 75.0f, (WebPImagePreset)WebPImageDefaultPreset, nil);
+    return UIImageWebPRepresentation(image, (WebPImagePreset)WebPImageDefaultPreset, 75.0, nil);
 }
 
 __attribute__((overloadable)) NSData * _Nullable UIImageWebPRepresentation(UIImage *image, WebPImagePreset preset, CGFloat quality, NSError * __autoreleasing *error) {
